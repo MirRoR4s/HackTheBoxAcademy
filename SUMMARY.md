@@ -19,6 +19,8 @@
       * [Introduction to Shell](readme/linux-fundamentals/introduction/introduction-to-shell.md)
     * [The Shell](readme/linux-fundamentals/the-shell/README.md)
       * [Prompt Description](readme/linux-fundamentals/the-shell/prompt-description.md)
+      * [Getting Help](readme/linux-fundamentals/the-shell/getting-help.md)
+      * [System Information](readme/linux-fundamentals/the-shell/system-information.md)
     * [Workflow](readme/linux-fundamentals/workflow/README.md)
       * [Regular Expressions](readme/linux-fundamentals/workflow/regular-expressions.md)
       * [Permission Management](readme/linux-fundamentals/workflow/permission-management.md)
