@@ -75,3 +75,8 @@
       * [Hypertext Transfer Protocol Secure (HTTPS)](readme/web-requests/http-fundamentals/hypertext-transfer-protocol-secure-https.md)
       * [HTTP Requests and Responses](readme/web-requests/http-fundamentals/http-requests-and-responses.md)
     * [Page 1](readme/web-requests/page-1.md)
+  * [Windows 基础](readme/windows-ji-chu/README.md)
+    * [Introduction](readme/windows-ji-chu/introduction/README.md)
+      * [Introduction to Windows](readme/windows-ji-chu/introduction/introduction-to-windows.md)
+    * [Core of the Operating System](readme/windows-ji-chu/core-of-the-operating-system/README.md)
+      * [Operating System Structure](readme/windows-ji-chu/core-of-the-operating-system/operating-system-structure.md)
