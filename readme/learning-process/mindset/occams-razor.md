@@ -40,7 +40,7 @@ Nevertheless, let us not forget to think outside the box when we think of "power
 
 So, in this case, the most straightforward explanation was also the most probable.
 
-
+***
 
 ### Occam's Razor in Practice
 
@@ -56,6 +56,4 @@ Anyone who has done at least two or three penetration tests will find that each 
 
 The unique techniques of how we get and use this information are, again, individual steps followed and not the whole concept. The same applies to most exploitation attacks and the individual steps for them. Once we understand the overall picture, adapting to the given situations and conditions is much easier. However, suppose we have only learned the individual steps. In that case, we will have difficulty adapting them to new situations because we do not understand their impact on the systems and their applications.
 
-Later in the process, we will see this phenomenon again and again. Once we have identified the solution to the problem, the process and the steps required to achieve it seem pretty straightforward in most cases. Looking back, it always seems easy once we know the solution. The art, after all, is not to get some flag but to find the way to it.
-
-[ Previous](https://academy.hackthebox.com/module/9/section/46) Mark Complete & Next[Next ](https://academy.hackthebox.com/module/9/section/1577)\
+Later in the process, we will see this phenomenon again and again. Once we have identified the solution to the problem, the process and the steps required to achieve it seem pretty straightforward in most cases. Looking back, it always seems easy once we know the solution. The art, after all, is not to get some flag but to find the way to it.\

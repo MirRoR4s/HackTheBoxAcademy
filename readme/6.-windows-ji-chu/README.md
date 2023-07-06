@@ -2,7 +2,7 @@
 description: https://academy.hackthebox.com/module/49/section/454
 ---
 
-# Windows 基础
+# 6. Windows 基础
 
 Windows 操作系统在各大企业环境中都被大量使用，所以我们经常会在渗透过程中获得 Windows 机器的访问权，那么了解如何浏览文件系统和命令行对进行有效的信息收集、提权、横向移动和后渗透就特别重要。在渗透过程中，也可用 Windows 作为我们的攻击机。
 

@@ -28,4 +28,4 @@ So, why didn't we think like that? During this learning path, we will acquire mo
 
 Why didn't you consider changing the arithmetic operations? Why didn't you think to add more digits? Try to answer as detailed as possible on your own. Try to write about it in at least 200 words.
 
-为什么你不考虑改变算术运算符呢？为什么你不考虑添加更多数位呢？尝试尽可能具体地回答这个问题并在纸上写下你的想法，至少200词。
+为什么不考虑改变算术运算符呢？为什么不考虑添加更多数位呢？尝试尽可能具体地回答这个问题并在纸上写下你的想法，至少200词。
