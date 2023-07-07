@@ -58,26 +58,27 @@ Let’s take a look at the individual permissions that can be set to secure/gran
 
 **NTFS special permissions**
 
-| Permission                       | Description                                                                                                                                                                                                                                  |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Full control`                   | Users are permitted or denied permissions to add, edit, move, delete files & folders as well as change NTFS permissions that apply to all permitted folders                                                                                  |
-| `Traverse folder / execute file` | Users are permitted or denied permissions to access a subfolder within a directory structure even if the user is denied access to contents at the parent folder level. Users may also be permitted or denied permissions to execute programs |
-| `List folder/read data`          | Users are permitted or denied permissions to view files and folders contained in the parent folder. Users can also be permitted to open and view files                                                                                       |
-| `Read attributes`                | Users are permitted or denied permissions to view basic attributes of a file or folder. Examples of basic attributes: system, archive, read-only, and hidden                                                                                 |
-| `Read extended attributes`       | Users are permitted or denied permissions to view extended attributes of a file or folder. Attributes differ depending on the program                                                                                                        |
-| `Create files/write data`        | Users are permitted or denied permissions to create files within a folder and make changes to a file                                                                                                                                         |
-| `Create folders/append data`     | Users are permitted or denied permissions to create subfolders within a folder. Data can be added to files but pre-existing content cannot be overwritten                                                                                    |
-| `Write attributes`               | Users are permitted or denied to change file attributes. This permission does not grant access to creating files or folders                                                                                                                  |
-| `Write extended attributes`      | Users are permitted or denied permissions to change extended attributes on a file or folder. Attributes differ depending on the program                                                                                                      |
-| `Delete subfolders and files`    | Users are permitted or denied permissions to delete subfolders and files. Parent folders will not be deleted                                                                                                                                 |
-| `Delete`                         | Users are permitted or denied permissions to delete parent folders, subfolders and files.                                                                                                                                                    |
-| `Read permissions`               | Users are permitted or denied permissions to read permissions of a folder                                                                                                                                                                    |
-| `Change permissions`             | Users are permitted or denied permissions to change permissions of a file or folder                                                                                                                                                          |
-| `Take ownership`                 | Users are permitted or denied permission to take ownership of a file or folder. The owner of a file has full permissions to change any permissions                                                                                           |
+<table><thead><tr><th width="350">Permission</th><th>Description</th></tr></thead><tbody><tr><td><code>Full control</code></td><td>Users are permitted or denied permissions to add, edit, move, delete files &#x26; folders as well as change NTFS permissions that apply to all permitted folders</td></tr><tr><td><code>Traverse folder / execute file</code></td><td><p>Users are permitted or denied permissions to access a subfolder within a directory structure even if the user is denied access to contents at the parent folder level. </p><p></p><p>Users may also be permitted or denied permissions to execute programs</p></td></tr><tr><td><code>List folder/read data</code></td><td><p>Users are permitted or denied permissions to view files and folders contained in the parent folder. </p><p></p><p>Users can also be permitted to open and view files</p></td></tr><tr><td><code>Read attributes</code></td><td><p>Users are permitted or denied permissions to view basic attributes of a file or folder. </p><p></p><p>Examples of basic attributes: system, archive, read-only, and hidden</p></td></tr><tr><td><code>Read extended attributes</code></td><td><p>Users are permitted or denied permissions to view extended attributes of a file or folder. </p><p></p><p>Attributes differ depending on the program</p></td></tr><tr><td><code>Create files/write data</code></td><td>Users are permitted or denied permissions to create files within a folder and make changes to a file</td></tr><tr><td><code>Create folders/append data</code></td><td><p>Users are permitted or denied permissions to create subfolders within a folder. </p><p></p><p>Data can be added to files but pre-existing content cannot be overwritten</p></td></tr><tr><td><code>Write attributes</code></td><td>Users are permitted or denied to change file attributes. This permission does not grant access to creating files or folders</td></tr><tr><td><code>Write extended attributes</code></td><td>Users are permitted or denied permissions to change extended attributes on a file or folder. Attributes differ depending on the program</td></tr><tr><td><code>Delete subfolders and files</code></td><td>Users are permitted or denied permissions to delete subfolders and files. Parent folders will not be deleted</td></tr><tr><td><code>Delete</code></td><td>Users are permitted or denied permissions to delete parent folders, subfolders and files.</td></tr><tr><td><code>Read permissions</code></td><td>Users are permitted or denied permissions to read permissions of a folder</td></tr><tr><td><code>Change permissions</code></td><td>Users are permitted or denied permissions to change permissions of a file or folder</td></tr><tr><td><code>Take ownership（获得所有权）</code></td><td>Users are permitted or denied permission to take ownership of a file or folder. The owner of a file has full permissions to change any permissions</td></tr></tbody></table>
 
-Keep in mind that NTFS permissions apply to the system where the folder and files are hosted. Folders created in NTFS inherit permissions from parent folders by default. It is possible to disable inheritance to set custom permissions on parent and subfolders, as we will do later in this module. The share permissions apply when the folder is being accessed through SMB, typically from a different system over the network. This means someone logged in locally to the machine or via RDP can access the shared folder and files by simply navigating to the location on the file system and only need to consider NTFS permissions. The permissions at the NTFS level provide administrators much more granular control over what users can do within a folder or file.
+Keep in mind that NTFS permissions apply to the system where the folder and files are hosted. Folders created in NTFS inherit permissions from parent folders by default.&#x20;
 
-***
+
+
+It is possible to disable inheritance to set custom permissions on parent and subfolders, as we will do later in this module.&#x20;
+
+
+
+The share permissions apply when the folder is being accessed through SMB, typically from a different system over the network.&#x20;
+
+
+
+This means someone logged in locally to the machine or via RDP can access the shared folder and files by simply navigating to the location on the file system and only need to consider NTFS permissions.&#x20;
+
+
+
+The permissions at the NTFS level provide administrators much more **granular（细粒度的）** control over what users can do within a folder or file.
+
+
 
 ### Creating a Network Share
 
@@ -85,31 +86,65 @@ To get a solid fundamental understanding of SMB and it's relationship to NTFS, w
 
 Note: It is an ideal learning experience to have the Pwnbox open full screen on a separate monitor so we may have at least one display dedicated to displaying the written content and one display for the boxes we are interacting with. Alternatively, if we only have access to one display, we can use that one for interactions with boxes and a smartphone or tablet to reference the written content.
 
-In this case, we will create a shared folder by first creating a new folder on the Windows 10 desktop. Keep in mind that in most large enterprise environments, shares are created on a Storage Area Network (SAN), Network Attached Storage device (NAS), or a separate partition on drives accessed via a server operating system like Windows Server. If we ever come across shares on a desktop operating system, it will either be a small business or it could be a beachhead system used by a penetration tester or malicious attacker to gather and exfiltrate data.
+In this case, we will create a shared folder by first creating a new folder on the Windows 10 desktop. Keep in mind that in most large enterprise environments, shares are created on a Storage Area Network (SAN), Network Attached Storage device (NAS), or a separate partition on drives accessed via a server operating system like Windows Server.&#x20;
+
+
+
+If we ever come across shares on a desktop operating system, it will either be a small business or it could be a beachhead system used by a penetration tester or malicious attacker to gather and exfiltrate data.
 
 We will go through this process using the GUI in Windows.
 
-**Creating the Folder**
+1. **Creating the Folder**
 
 ![creating directory](https://academy.hackthebox.com/storage/modules/49/creating\_directory.png)
 
 We are going to use the `Advanced Sharing` option to configure our share.
 
-**Making the Folder a Share**
+2. **Making the Folder a Share**
 
 ![configuring share](https://academy.hackthebox.com/storage/modules/49/configuring\_share.png)
 
-Notice how the share name automatically defaults to the name of the folder. Also, we can see that it is possible to limit the number of users that can be connected to this share simultaneously. In a real-world environment it is a good practice for administrators to set this number according to the number of users that regularly need access to the resource being shared.
+Notice how the share name automatically defaults to the name of the folder.&#x20;
 
-Similar to NTFS permissions, there is an `access control list` (`ACL`) for shared resources. We can consider this the SMB permissions list. Keep in mind that with shared resources, both the SMB and NTFS permissions lists apply to every resource that gets shared in Windows. The ACL contains `access control entries` (`ACEs`). Typically these ACEs are made up of `users` & `groups` (also called security principals) as they are a suitable mechanism for managing and tracking access to shared resources.
+
+
+Also, we can see that it is possible to limit the number of users that can be connected to this share simultaneously.&#x20;
+
+
+
+In a real-world environment it is a good practice for administrators to set this number according to the number of users that regularly need access to the resource being shared.
+
+Similar to NTFS permissions, there is an `access control list` (`ACL`) for shared resources.&#x20;
+
+
+
+We can consider this the SMB permissions list.&#x20;
+
+
+
+Keep in mind that with shared resources, both the SMB and NTFS permissions lists apply to every resource that gets shared in Windows.&#x20;
+
+
+
+The ACL contains `access control entries` (`ACEs`).&#x20;
+
+
+
+Typically these ACEs are made up of `users` & `groups` (also called **security principals（安全主体）**) as they are a suitable mechanism for managing and tracking access to shared resources.
 
 Notice the default access control entry and permissions settings.
 
-**Share Permissions ACL (Sharing Tab)**
+3. **Share Permissions ACL (Sharing Tab)**
 
 ![share permissions](https://academy.hackthebox.com/storage/modules/49/share\_permissions.png)
 
-For now, we are going to apply these settings to test the effect of this ACL and the permissions applied as-is. We will test connectivity from the Pwnbox by opening terminal and using `smbclient`.
+For now, we are going to apply these settings to test the effect of this ACL and the permissions applied as-is.&#x20;
+
+
+
+We will test connectivity from the Pwnbox by opening terminal and using `smbclient`.
+
+
 
 Note: A server is technically a software function used to service the requests of a client. In this case, the Pwnbox is our client, and the Windows 10 target box is our server.
 
