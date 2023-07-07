@@ -2,7 +2,7 @@
 description: https://academy.hackthebox.com/module/49/section/1017
 ---
 
-# NTFS vs. Share Permissions
+# 😀 NTFS vs. Share Permissions
 
 Microsoft owns over [70%](https://gs.statcounter.com/os-market-share/desktop/worldwide/#monthly-201804-202104) of the global market share on desktop operating systems with Windows.&#x20;
 
