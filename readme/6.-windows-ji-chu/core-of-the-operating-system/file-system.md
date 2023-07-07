@@ -4,9 +4,23 @@ description: https://academy.hackthebox.com/module/49/section/456
 
 # 😃 File System
 
-There are 5 types of Windows file systems: FAT12, FAT16, FAT32, NTFS, and exFAT. FAT12 and FAT16 are no longer used on modern Windows operating systems. We will touch upon the FAT32 and exFAT file systems for this training, but our main focus will be the NTFS file system.
+There are 5 types of Windows file systems: FAT12, FAT16, FAT32, NTFS, and exFAT.&#x20;
 
-FAT32 (File Allocation Table) is widely used across many types of storage devices such as USB memory sticks and SD cards but can also be used to format hard drives. The "32" in the name refers to the fact that FAT32 uses 32 bits of data for identifying data clusters on a storage device.
+FAT12 and FAT16 are no longer used on modern Windows operating systems.&#x20;
+
+
+
+We will **touch upon（**简要提及**）** the FAT32 and exFAT file systems for this training, but our main focus will be the NTFS file system.
+
+
+
+FAT32 (File Allocation Table) is widely used across many types of storage devices such as USB **memory sticks（存储卡）** and SD cards but can also be used to format hard drives.&#x20;
+
+
+
+The "32" in the name refers to the fact that FAT32 uses 32 bits of data for identifying **data clusters（数据集群）** on a storage device.
+
+
 
 **`Pros of FAT32:`**
 
@@ -39,17 +53,13 @@ NTFS (New Technology File System) is the default Windows file system since Windo
 
 The NTFS file system has many basic and advanced permissions. Some of the key permission types are:
 
-| Permission Type      | Description                                                                                                                                                                                                                                                                                                                                                                                 |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Full Control         | Allows reading, writing, changing, deleting of files/folders.                                                                                                                                                                                                                                                                                                                               |
-| Modify               | Allows reading, writing, and deleting of files/folders.                                                                                                                                                                                                                                                                                                                                     |
-| List Folder Contents | Allows for viewing and listing folders and subfolders as well as executing files. Folders only inherit this permission.                                                                                                                                                                                                                                                                     |
-| Read and Execute     | Allows for viewing and listing files and subfolders as well as executing files. Files and folders inherit this permission.                                                                                                                                                                                                                                                                  |
-| Write                | Allows for adding files to folders and subfolders and writing to a file.                                                                                                                                                                                                                                                                                                                    |
-| Read                 | Allows for viewing and listing of folders and subfolders and viewing a file's contents.                                                                                                                                                                                                                                                                                                     |
-| Traverse Folder      | This allows or denies the ability to move through folders to reach other files or folders. For example, a user may not have permission to list the directory contents or view files in the documents or web apps directory in this example c:\users\bsmith\documents\webapps\backups\backup\_02042020.zip but with Traverse Folder permissions applied, they can access the backup archive. |
+<table><thead><tr><th width="208.5">Permission Type</th><th>Description</th></tr></thead><tbody><tr><td>Full Control</td><td>Allows reading, writing, changing, deleting of files/folders.</td></tr><tr><td>Modify</td><td>Allows reading, writing, and deleting of files/folders.</td></tr><tr><td>List Folder Contents</td><td>Allows for viewing and listing folders and subfolders as well as executing files. Folders only inherit this permission.</td></tr><tr><td>Read and Execute</td><td>Allows for viewing and listing files and subfolders as well as executing files. Files and folders inherit this permission.</td></tr><tr><td>Write</td><td>Allows for adding files to folders and subfolders and writing to a file.</td></tr><tr><td>Read</td><td>Allows for viewing and listing of folders and subfolders and viewing a file's contents.</td></tr><tr><td>Traverse Folder</td><td>This allows or denies the ability to move through folders to reach other files or folders. For example, a user may not have permission to list the directory contents or view files in the documents or web apps directory in this example c:\users\bsmith\documents\webapps\backups\backup_02042020.zip but with Traverse Folder permissions applied, they can access the backup archive.</td></tr></tbody></table>
 
-Files and folders inherit the NTFS permissions of their parent folder for ease of administration, so administrators do not need to explicitly set permissions for each file and folder, as this would be extremely time-consuming. If permissions do need to be set explicitly, an administrator can disable permissions inheritance for the necessary files and folders and then set the permissions directly on each.
+Files and folders inherit the NTFS permissions of their parent folder for ease of administration, so administrators do not need to explicitly set permissions for each file and folder, as this would be extremely time-consuming.&#x20;
+
+
+
+If permissions do need to be set explicitly, an administrator can disable permissions inheritance for the necessary files and folders and then set the permissions directly on each.
 
 ***
 
@@ -57,11 +67,13 @@ Files and folders inherit the NTFS permissions of their parent folder for ease o
 
 NTFS permissions on files and folders in Windows can be managed using the File Explorer GUI under the security tab. Apart from the GUI, we can also achieve a fine level of granularity over NTFS file permissions in Windows from the command line using the icacls utility.
 
+
+
 We can list out the NTFS permissions on a specific directory by running either `icacls` from within the working directory or `icacls C:\Windows` against a directory not currently in.
 
 &#x20;&#x20;
 
-```cmd-session
+```bash
 C:\htb> icacls c:\windows
 c:\windows NT SERVICE\TrustedInstaller:(F)
            NT SERVICE\TrustedInstaller:(CI)(IO)(F)
@@ -88,9 +100,17 @@ The resource access level is listed after each user in the output. The possible 
 * `(NP)`: do not propagate inherit
 * `(I)`: permission inherited from parent container
 
-In the above example, the `NT AUTHORITY\SYSTEM` account has object inherit, container inherit, inherit only, and full access permissions. This means that this account has full control over all file system objects in this directory and subdirectories.
+In the above example, the `NT AUTHORITY\SYSTEM` account has object inherit, container inherit, inherit only, and full access permissions.&#x20;
+
+在上例中，`NT AUTHORITY\SYSTEM 账户具有对象继承、容器继承、仅继承和完全控制权。`
+
+&#x20;This means that this account has full control over all file system objects in this directory and subdirectories.
+
+这意味着该账户可以完全控制该目录以及子目录下的所有文件系统对象。
 
 Basic access permissions are as follows:
+
+基本的访问权限如下：
 
 * `F` : full access
 * `D` :  delete access
