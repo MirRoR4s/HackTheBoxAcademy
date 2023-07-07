@@ -4,7 +4,31 @@ description: https://academy.hackthebox.com/module/49/section/1017
 
 # NTFS vs. Share Permissions
 
-Microsoft owns over [70%](https://gs.statcounter.com/os-market-share/desktop/worldwide/#monthly-201804-202104) of the global market share on desktop operating systems with Windows. This explains why most malware authors choose to write malware for Windows and why many perceive Windows as less secure than other operating systems. From a business perspective it just makes sense for malware authors to expend resources on writing malware for Windows. It is a high-value target. The idea that any OS is immune to malware is a technical fallacy. If software can be written for an operating system then a virus can be written for an operating system. Keep in mind that a virus, by definition, is software written with malicious intent and can be written for any OS. Many variants of malware written for Windows can spread over the network via network shares with lenient permissions applied. It is also worth noting that to this day, the infamous `EternalBlue` vulnerability still haunts unpatched Windows systems running `SMBv1` and often paves the way for ransomware to shut down organizations.
+Microsoft owns over [70%](https://gs.statcounter.com/os-market-share/desktop/worldwide/#monthly-201804-202104) of the global market share on desktop operating systems with Windows.&#x20;
+
+
+
+This explains why most malware authors choose to write malware for Windows and why many perceive Windows as less secure than other operating systems.
+
+
+
+&#x20;From a business perspective it just makes sense for malware authors to expend resources on writing malware for Windows. It is a high-value target.&#x20;
+
+
+
+The idea that any OS is immune to malware is a technical fallacy. If software can be written for an operating system then a virus can be written for an operating system.&#x20;
+
+
+
+Keep in mind that a virus, by definition, is software written with malicious intent and can be written for any OS.&#x20;
+
+
+
+Many variants of malware written for Windows can spread over the network via network shares with **lenient（宽松的）** permissions applied.&#x20;
+
+
+
+It is also worth noting that to this day, the infamous `EternalBlue` vulnerability still haunts unpatched Windows systems running `SMBv1` and often paves the way for ransomware to shut down organizations.
 
 The `Server Message Block protocol` (`SMB`) is used in Windows to connect shared resources like files and printers. It is used in large, medium, and small enterprise environments. See the image below to visualize this concept:
 
@@ -12,27 +36,25 @@ The `Server Message Block protocol` (`SMB`) is used in Windows to connect shared
 
 Note: Any time you see a visualization/diagram of a concept, take your time to understand it thoroughly. A picture can be worth a thousand words but very tempting to skip over when reading.
 
-NTFS permissions and share permissions are often understood to be the same. Please know that they are not the same but often apply to the same shared resource. Let’s take a look at the individual permissions that can be set to secure/grant objects access to a network share hosted on a Windows OS running the NTFS file system.
+NTFS permissions and share permissions are often understood to be the same.
+
+
+
+&#x20;Please know that they are not the same but often apply to the same shared resource.&#x20;
+
+
+
+Let’s take a look at the individual permissions that can be set to secure/grant objects access to a network share hosted on a Windows OS running the NTFS file system.
+
+给一个运行着 NTFS 文件系统的 Windows 主机上的网络共享授予对象访问权限。
 
 **Share permissions**
 
-| Permission     | Description                                                                                                                                 |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Full Control` | Users are permitted to perform all actions given by Change and Read permissions as well as change permissions for NTFS files and subfolders |
-| `Change`       | Users are permitted to read, edit, delete and add files and subfolders                                                                      |
-| `Read`         | Users are allowed to view file & subfolder contents                                                                                         |
+<table><thead><tr><th width="172.5">Permission</th><th>Description</th></tr></thead><tbody><tr><td><code>Full Control</code></td><td>Users are permitted to perform all actions given by Change and Read permissions as well as change permissions for NTFS files and subfolders</td></tr><tr><td><code>Change</code></td><td>Users are permitted to read, edit, delete and add files and subfolders</td></tr><tr><td><code>Read</code></td><td>Users are allowed to view file &#x26; subfolder contents</td></tr></tbody></table>
 
 **NTFS Basic permissions**
 
-| Permission             | Description                                                                                                                         |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `Full Control`         | Users are permitted to add, edit, move, delete files & folders as well as change NTFS permissions that apply to all allowed folders |
-| `Modify`               | Users are permitted or denied permissions to view and modify files and folders. This includes adding or deleting files              |
-| `Read & Execute`       | Users are permitted or denied permissions to read the contents of files and execute programs                                        |
-| `List folder contents` | Users are permitted or denied permissions to view a listing of files and subfolders                                                 |
-| `Read`                 | Users are permitted or denied permissions to read the contents of files                                                             |
-| `Write`                | Users are permitted or denied permissions to write changes to a file and add new files to a folder                                  |
-| `Special Permissions`  | A variety of advanced permissions options                                                                                           |
+<table><thead><tr><th width="237.5">Permission</th><th>Description</th></tr></thead><tbody><tr><td><code>Full Control</code></td><td>Users are permitted to add, edit, move, delete files &#x26; folders as well as change NTFS permissions that apply to all allowed folders</td></tr><tr><td><code>Modify</code></td><td>Users are permitted or denied permissions to view and modify files and folders. This includes adding or deleting files</td></tr><tr><td><code>Read &#x26; Execute</code></td><td>Users are permitted or denied permissions to read the contents of files and execute programs</td></tr><tr><td><code>List folder contents</code></td><td>Users are permitted or denied permissions to view a listing of files and subfolders</td></tr><tr><td><code>Read</code></td><td>Users are permitted or denied permissions to read the contents of files</td></tr><tr><td><code>Write</code></td><td>Users are permitted or denied permissions to write changes to a file and add new files to a folder</td></tr><tr><td><code>Special Permissions</code></td><td>A variety of advanced permissions options</td></tr></tbody></table>
 
 **NTFS special permissions**
 
