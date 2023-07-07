@@ -82,4 +82,4 @@
     * [Core of the Operating System](readme/6.-windows-ji-chu/core-of-the-operating-system/README.md)
       * [😆 Operating System Structure](readme/6.-windows-ji-chu/core-of-the-operating-system/operating-system-structure.md)
       * [😃 File System](readme/6.-windows-ji-chu/core-of-the-operating-system/file-system.md)
-      * [NTFS vs. Share Permissions](readme/6.-windows-ji-chu/core-of-the-operating-system/ntfs-vs.-share-permissions.md)
+      * [😀 NTFS vs. Share Permissions](readme/6.-windows-ji-chu/core-of-the-operating-system/ntfs-vs.-share-permissions.md)
