@@ -94,13 +94,19 @@ The following is a list of the major Windows operating systems and associated ve
 
 We can use the [Get-WmiObject](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-wmiobject?view=powershell-5.1) [cmdlet](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7) to find information about the operating system.&#x20;
 
+> cmdlet 是什么？
+
+This cmdlet can be used to get instances of WMI classes or information about available WMI classes.&#x20;
+
+> WMI 类是什么？
+
+There are a variety of ways to find the version and build number of our system.
 
 
-This cmdlet can be used to get instances of WMI classes or information about available WMI classes. There are a variety of ways to find the version and build number of our system. We can easily obtain this information using the `win32_OperatingSystem` class, which shows that we are on a Windows 10 host, build number 19041.
 
-&#x20;&#x20;
+&#x20;We can easily obtain this information using the `win32_OperatingSystem` class, which shows that we are on a Windows 10 host, build number 19041.
 
-```powershell-session
+```powershell
 PS C:\htb> Get-WmiObject -Class win32_OperatingSystem | select Version,BuildNumber
 
 Version    BuildNumber
@@ -108,7 +114,19 @@ Version    BuildNumber
 10.0.19041 19041
 ```
 
-Some other useful classes that can be used with `Get-WmiObject` are `Win32_Process` to get a process listing, `Win32_Service` to get a listing of services, and `Win32_Bios` to get [Basic Input/Output System](https://en.wikipedia.org/wiki/BIOS) (`BIOS`) information. The BIOS is firmware installed on a computer's motherboard that controls the computer's essential functions, such as power management, input/output interfaces, and system configuration. We can use the `ComputerName` parameter to get information about remote computers. `Get-WmiObject` can be used to start and stop services on local and remote computers, and more. Further information about the cmdlet can be found [here](https://ss64.com/ps/get-wmiobject.html) and [here](https://adamtheautomator.com/get-wmiobject/).
+Some other useful classes that can be used with `Get-WmiObject` are `Win32_Process` to get a process listing, `Win32_Service` to get a listing of services, and `Win32_Bios` to get [Basic Input/Output System](https://en.wikipedia.org/wiki/BIOS) (`BIOS`) information.&#x20;
+
+
+
+The BIOS is **firmware（固件）** installed on a computer's motherboard that controls the computer's essential functions, such as power management, input/output interfaces, and system configuration.&#x20;
+
+
+
+We can use the `ComputerName` parameter to get information about remote computers.&#x20;
+
+
+
+`Get-WmiObject` can be used to start and stop services on local and remote computers, and more. Further information about the cmdlet can be found [here](https://ss64.com/ps/get-wmiobject.html) and [here](https://adamtheautomator.com/get-wmiobject/).
 
 ***
 
@@ -116,11 +134,41 @@ Some other useful classes that can be used with `Get-WmiObject` are `Win32_Proce
 
 **Local Access Concepts**
 
-If you are reading these words right now, you have local access to a computer of some kind. Be it a smartphone, tablet, laptop, Raspberry Pi, or Desktop. Local access is the most common way to access any computer, including computers running Windows. `Input` is likely happening through a keyboard, trackpad &/or mouse. `Output` is coming from the display screen(s). Organizations with office space where employees work on a day-to-day basis build security policies and security controls around the idea that their employees are working in dedicated workspaces on computers owned by the organization. It is becoming more common to see organizations increasing their support for remote work with their non-technical and technical workforces. This is not a new reality for technical professionals working in IT, Software Development & Infosec. On any given day, a technical professional could be accessing multiple machines locally and remotely. With that, let's discuss the concept of remote access.
+If you are reading these words right now, you have local access to a computer of some kind. Be it a smartphone, tablet, laptop, Raspberry Pi, or Desktop.&#x20;
+
+
+
+Local access is the most common way to access any computer, including computers running Windows.&#x20;
+
+`Input` is likely happening through a keyboard, **trackpad（触摸板）** &/or mouse.&#x20;
+
+
+
+`Output` is coming from the display screen(s). Organizations with office space where employees work on a **day-to-day（日常）** basis build security policies and security controls around the idea that their employees are working in **dedicated（专用的）** workspaces on computers owned by the organization.&#x20;
+
+
+
+It is becoming more common to see organizations increasing their support for remote work with their non-technical and technical workforces.&#x20;
+
+
+
+This is not a new reality for technical professionals working in IT, Software Development & Infosec.&#x20;
+
+
+
+On any given day, a technical professional could be accessing multiple machines locally and remotely. With that, let's discuss the concept of remote access.
 
 **Remote Access Concepts**
 
-Remote Access is accessing a computer over a network. Local access to a computer is needed before one can access another computer remotely. There are countless methods for remote access. In this module, we will mainly use remote access methods to connect to and interact with Windows operating systems. Advances in Networking & Internet technologies have given birth to entire industries that rely completely on remote access & remote administration of computer systems.
+Remote Access is accessing a computer over a network.&#x20;
+
+
+
+Local access to a computer is needed before one can access another computer remotely.&#x20;
+
+
+
+There are countless methods for remote access. In this module, we will mainly use remote access methods to connect to and interact with Windows operating systems. Advances in Networking & Internet technologies have given birth to entire industries that rely completely on remote access & remote administration of computer systems.
 
 Consider [MSPs](https://www.techtarget.com/searchitchannel/definition/managed-service-provider) & [MSSPs](https://www.gartner.com/en/information-technology/glossary/mssp-managed-security-service-provider), both industries are primarily dependent on managing their client's computer systems remotely. This functionality allows them to centralize management, standardize what technologies are used, automate numerous tasks, enable remote work arrangements and allow for quick response time when issues surface, or potential security threats emerge. Remote access is not just limited to MSPs & MSSPs. Organizations with IT, Software Development &/or Security teams use remote access methods daily to build applications, manage servers and administer employee workstations. Some of the most common remote access technologies include but aren't limited to:
 
