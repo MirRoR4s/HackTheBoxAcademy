@@ -212,13 +212,21 @@ By default, all NTFS permissions are inherited from the parent directory.&#x20;
 
 In the Windows world, the `C:\ drive` is the parent directory to **rule（控制）** all directories unless a system administrator were to disable inheritance inside a newly created folder’s advanced Security settings.
 
-In many cases, the system administrator(s) of an organization would be responsible for deciding what permissions a user or group of users gets over network resources.&#x20;
+In many cases, the system administrator(s) of an organization would be responsible for deciding what permissions a user or group of users **gets over** network resources.&#x20;
 
 
 
-This is why many spear-phishing attacks are directed at system administrators and other IT leaders. They have lots of influence over what is allowed in the environments they oversee, even more so than an organization's non-technical c-level leaders in many cases. For example, the doctors or executives working in a hospital will not have administrative rights over the network, but the system administrators will.
+This is why many spear-phishing attacks are directed at system administrators and other IT leaders.&#x20;
 
-Now lets give the Everyone group `Full control` at the share level and test the impact of the change by trying to create a mount point to the share from the Desktop of our Pwnbox
+
+
+**They have lots of influence over what is allowed in the environments they oversee（**监管）**, even more so than an organization's non-technical c-level leaders in many cases.**&#x20;
+
+
+
+For example, the doctors or **executives（**主管） working in a hospital will not have administrative rights over the network, but the system administrators will.
+
+Now lets give the Everyone group `Full control` at the share level and test the impact of the change by trying to create a mount point to the share from the Desktop of our Pwnbox.
 
 **Mounting to the Share**
 
@@ -226,13 +234,19 @@ Now lets give the Everyone group `Full control` at the share level and test the 
 MirRoR4s@htb[/htb]$ sudo mount -t cifs -o username=htb-student,password=Academy_WinFun! //ipaddoftarget/"Company Data" /home/user/Desktop/
 ```
 
-If this command is not working check the syntax. If the syntax is correct yet the command is still not working, `cifs-utils` may need to be installed. This can be done with the following command:
+If this command is not working check the syntax.&#x20;
+
+
+
+If the syntax is correct yet the command is still not working, `cifs-utils` may need to be installed.&#x20;
+
+
+
+This can be done with the following command:
 
 **Installing CIFS Utilities**
 
-&#x20; Installing CIFS Utilities
-
-```shell-session
+```bash
 MirRoR4s@htb[/htb]$ sudo apt-get install cifs-utils
 ```
 
@@ -248,9 +262,7 @@ We can also see the share we created.
 
 **Displaying Shares using net share**
 
-&#x20; Displaying Shares using net share
-
-```cmd-session
+```bash
 C:\Users\htb-student> net share
 
 Share name   Resource                        Remark
