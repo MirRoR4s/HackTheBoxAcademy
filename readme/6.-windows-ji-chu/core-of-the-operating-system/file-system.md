@@ -138,7 +138,7 @@ Using the command `icacls c:\users /grant joe:f` we can grant the joe user full 
 
 &#x20;&#x20;
 
-```cmd-session
+```bash
 C:\htb> icacls c:\users /grant joe:f
 processed file: c:\users
 Successfully processed 1 files; Failed processing 0 files
@@ -146,7 +146,7 @@ Successfully processed 1 files; Failed processing 0 files
 
 &#x20;&#x20;
 
-```cmd-session
+```bash
 C:\htb> >icacls c:\users
 c:\users WS01\joe:(F)
          NT AUTHORITY\SYSTEM:(OI)(CI)(F)
@@ -161,26 +161,11 @@ Successfully processed 1 files; Failed processing 0 files
 
 These permissions can be revoked using the command `icacls c:\users /remove joe`.
 
+
+
 `icacls` is very powerful and can be used in a domain setting to give certain users or groups specific permissions over a file or folder, explicitly deny access, enable or disable inheritance permissions, and change directory/file ownership.
 
 A full listing of `icacls` command-line arguments and detailed permission settings can be found [here](https://ss64.com/nt/icacls.html).
-
-VPN Servers
-
-Warning: Each time you "Switch", your connection keys are regenerated and you must re-download your VPN connection file.
-
-All VM instances associated with the old VPN Server will be terminated when switching to a new VPN server.\
-Existing PwnBox instances will automatically switch to the new VPN server.
-
-&#x20;Select Vpn Server  eu-academy-1 eu-academy-2 us-academy-1 us-academy-2 us-academy-3&#x20;
-
-PROTOCOL
-
-UDP 1337TCP 443DOWNLOAD VPN CONNECTION FILEStart Instance
-
-&#x20;/ 1 spawns left
-
-Waiting to start...
 
 **Questions**
 
@@ -188,8 +173,6 @@ Answer the question(s) below to complete this Section and earn cubes!
 
 Target: Click here to spawn the target system!\
 
-
-Cheat Sheet[Download VPN Connection File](https://academy.hackthebox.com/vpn/key)
 
 &#x20;RDP to with user "htb-student" and password "Academy\_WinFun!"
 
