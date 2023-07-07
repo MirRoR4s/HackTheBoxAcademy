@@ -6,6 +6,8 @@ description: https://academy.hackthebox.com/module/49/section/456
 
 There are 5 types of Windows file systems: FAT12, FAT16, FAT32, NTFS, and exFAT.&#x20;
 
+
+
 FAT12 and FAT16 are no longer used on modern Windows operating systems.&#x20;
 
 
@@ -33,7 +35,7 @@ The "32" in the name refers to the fact that FAT32 uses 32 bits of data for iden
 * No built-in data protection or file compression features.
 * Must use third-party tools for file encryption.
 
-NTFS (New Technology File System) is the default Windows file system since Windows NT 3.1. In addition to making up for the shortcomings of FAT32, NTFS also has better support for metadata and better performance due to improved data structuring.
+`NTFS (New Technology File System)` is the default Windows file system since Windows NT 3.1. In addition to making up for the shortcomings of FAT32, NTFS also has better support for metadata and better performance due to improved data structuring.
 
 **`Pros of NTFS:`**
 
@@ -47,8 +49,6 @@ NTFS (New Technology File System) is the default Windows file system since Windo
 * Most mobile devices do not support NTFS natively.
 * Older media devices such as TVs and digital cameras do not offer support for NTFS storage devices.
 
-***
-
 ### Permissions
 
 The NTFS file system has many basic and advanced permissions. Some of the key permission types are:
@@ -61,11 +61,9 @@ Files and folders inherit the NTFS permissions of their parent folder for ease o
 
 If permissions do need to be set explicitly, an administrator can disable permissions inheritance for the necessary files and folders and then set the permissions directly on each.
 
-***
-
 ### Integrity Control Access Control List (icacls)
 
-NTFS permissions on files and folders in Windows can be managed using the File Explorer GUI under the security tab. Apart from the GUI, we can also achieve a fine level of granularity over NTFS file permissions in Windows from the command line using the icacls utility.
+NTFS permissions on files and folders in Windows can be managed using the File Explorer GUI under the security tab. Apart from the GUI, we can also achieve a fine level of granularity over NTFS file permissions in Windows from the command line using the **icacls** utility.
 
 
 
@@ -73,7 +71,7 @@ We can list out the NTFS permissions on a specific directory by running either `
 
 &#x20;&#x20;
 
-```bash
+```powershell
 C:\htb> icacls c:\windows
 c:\windows NT SERVICE\TrustedInstaller:(F)
            NT SERVICE\TrustedInstaller:(CI)(IO)(F)
@@ -106,7 +104,7 @@ In the above example, the `NT AUTHORITY\SYSTEM` account has object inherit, cont
 
 &#x20;This means that this account has full control over all file system objects in this directory and subdirectories.
 
-这意味着该账户可以完全控制该目录以及子目录下的所有文件系统对象。
+
 
 Basic access permissions are as follows:
 
@@ -124,7 +122,7 @@ We can add and remove permissions via the command line using `icacls`. Here we a
 
 &#x20;&#x20;
 
-```cmd-session
+```powershell
 C:\htb> icacls c:\Users
 c:\Users NT AUTHORITY\SYSTEM:(OI)(CI)(F)
          BUILTIN\Administrators:(OI)(CI)(F)
