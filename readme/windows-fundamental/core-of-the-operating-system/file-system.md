@@ -35,7 +35,11 @@ The "32" in the name refers to the fact that FAT32 uses 32 bits of data for iden
 * No built-in data protection or file compression features.
 * Must use third-party tools for file encryption.
 
-`NTFS (New Technology File System)` is the default Windows file system since Windows NT 3.1. In addition to making up for the shortcomings of FAT32, NTFS also has better support for metadata and better performance due to improved data structuring.
+`NTFS (New Technology File System)` is the default Windows file system since Windows NT 3.1.&#x20;
+
+
+
+In addition to making up for the shortcomings of FAT32, NTFS also has better support for metadata and better performance due to improved data structuring.
 
 **`Pros of NTFS:`**
 
@@ -146,7 +150,7 @@ Successfully processed 1 files; Failed processing 0 files
 
 &#x20;&#x20;
 
-```bash
+```powershell
 C:\htb> >icacls c:\users
 c:\users WS01\joe:(F)
          NT AUTHORITY\SYSTEM:(OI)(CI)(F)
@@ -170,9 +174,6 @@ A full listing of `icacls` command-line arguments and detailed permission settin
 **Questions**
 
 Answer the question(s) below to complete this Section and earn cubes!
-
-Target: Click here to spawn the target system!\
-
 
 &#x20;RDP to with user "htb-student" and password "Academy\_WinFun!"
 
