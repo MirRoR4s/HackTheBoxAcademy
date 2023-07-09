@@ -83,3 +83,5 @@
       * [😆 Operating System Structure](readme/windows-fundamental/core-of-the-operating-system/operating-system-structure.md)
       * [😃 File System](readme/windows-fundamental/core-of-the-operating-system/file-system.md)
       * [😀 NTFS vs. Share Permissions](readme/windows-fundamental/core-of-the-operating-system/ntfs-vs.-share-permissions.md)
+    * [Working with Services & Processes](readme/windows-fundamental/working-with-services-and-processes/README.md)
+      * [🎶 Windows Services & Processes](readme/windows-fundamental/working-with-services-and-processes/windows-services-and-processes.md)
