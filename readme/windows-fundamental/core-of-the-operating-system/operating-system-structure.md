@@ -55,7 +55,7 @@ The [tree](https://docs.microsoft.com/en-us/windows-server/administration/window
 
 
 
-```bash
+```powershell
 C:\htb> tree "c:\Program Files (x86)\VMware"
 Folder PATH listing
 Volume serial number is F416-77BE
