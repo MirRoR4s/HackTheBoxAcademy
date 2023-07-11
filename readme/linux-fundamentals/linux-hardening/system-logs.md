@@ -6,11 +6,11 @@ description: https://academy.hackthebox.com/module/18/section/2100
 
 System logs on Linux are a set of files that contain information about the system and the activities taking place on it.&#x20;
 
-Linux的系统日志就是一个文件的集合，这些文件包含了系统和在系统上发生的各种活动的信息。
+Linux系统日志是一个文件的集合，这些文件包含了系统和在系统上发生的各种活动的信息。
 
 These logs are important for monitoring and troubleshooting the system, as they can provide **insights（深入了解）** into system behavior, application activity, and security events.&#x20;
 
-系统日志对于系统监视和系统排错十分重要，因为它们能帮助我们深入了解系统行为、程序行为和安全事件。
+系统日志对于系统监视和系统排错十分重要，因为它能帮助我们深入了解如系统行为、程序行为和安全事件等信息。
 
 These system logs can be a valuable source of information for identifying potential security weaknesses and vulnerabilities within a Linux system as well.&#x20;
 
