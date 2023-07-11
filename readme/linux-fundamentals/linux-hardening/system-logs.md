@@ -6,7 +6,7 @@ description: https://academy.hackthebox.com/module/18/section/2100
 
 System logs on Linux are a set of files that contain information about the system and the activities taking place on it.&#x20;
 
-Linux的系统日志是一个文件的集合，这些文件包含了系统和在系统上发生的各种活动的信息。
+Linux的系统日志就是一个文件的集合，这些文件包含了系统和在系统上发生的各种活动的信息。
 
 These logs are important for monitoring and troubleshooting the system, as they can provide **insights（深入了解）** into system behavior, application activity, and security events.&#x20;
 
@@ -64,7 +64,7 @@ Linux中有几种不同类型的系统日志，包括：
 
 
 
-**Kernel logs**
+**Kernel logs-内核日志**
 
 These logs contain information about the system's kernel, including hardware drivers, system calls, and kernel events.&#x20;
 
@@ -90,29 +90,33 @@ By monitoring the `/var/log/kern.log` file, we can detect any unusual behavior a
 
 通过监视 /var/log/kern.log 文件，我们能够发现异常行为并采取适当的措施阻止其进一步损害系统。
 
-**System logs**
+***
+
+**System logs-系统日志**
 
 These logs contain information about system-level events, such as service starts and stops, login attempts, and system reboots.&#x20;
 
-
+系统日志包含系统级事件的信息，比如服务的启停、登录尝试和系统重启等。
 
 They are stored in the `/var/log/syslog` file.&#x20;
 
-
+系统日志存储在 `/var/log/syslog` 文件中。
 
 By analyzing login attempts, service starts and stops, and other system-level events, we can detect any possible access or activities on the system.&#x20;
 
-
+通过分析登录尝试、服务启停和其他系统级事件，我们能够探查到任何可能的系统活动或是对系统的访问。
 
 This can help us identify any vulnerabilities that could be exploited and help us recommend security measures to mitigate these risks.&#x20;
 
-
+这能够帮助我们发现任意可能会被利用的漏洞并帮助我们完善安全措施以此来消除这些影响。
 
 In addition, we can use the `syslog` to identify potential issues that could impact the availability or performance of the system, such as failed service starts or system reboots. Here is an example of how such `syslog` file could look like:
 
+此外，我们可以使用 `syslog` 来发现潜在的问题，这些问题也许会影响到系统的可用性或是性能，比如导致服务启动失败或是系统重启。以下是 `syslog` 文件的一个示例：
+
 **Syslog**
 
-```
+```bash
 Feb 28 2023 15:00:01 server CRON[2715]: (root) CMD (/usr/local/bin/backup.sh)
 Feb 28 2023 15:04:22 server sshd[3010]: Failed password for htb-student from 10.14.15.2 port 50223 ssh2
 Feb 28 2023 15:05:02 server kernel: [  138.303596] ata3.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6 frozen
@@ -122,13 +126,25 @@ Feb 28 2023 15:09:54 server kernel: [  367.543975] EXT4-fs (sda1): re-mounted. O
 Feb 28 2023 15:12:07 server systemd[1]: Started Clean PHP session files.
 ```
 
-**Authentication logs**
+***
 
-These logs contain information about user authentication attempts, including successful and failed attempts. They are stored in the `/var/log/auth.log` file. It is important to note that while the `/var/log/syslog` file may contain similar login information, the `/var/log/auth.log` file specifically focuses on user authentication attempts, making it a more valuable resource for identifying potential security threats. Therefore, it is essential for penetration testers to review the logs stored in the `/var/log/auth.log` file to ensure that the system is secure and has not been compromised.
+**Authentication logs-认证日志**
+
+These logs contain information about user authentication attempts, including successful and failed attempts.&#x20;
+
+认证日志包含用户身份认证尝试的信息，包括成功的和失败的尝试。
+
+They are stored in the `/var/log/auth.log` file. It is important to note that while the `/var/log/syslog` file may contain similar login information, the `/var/log/auth.log` file specifically focuses on user authentication attempts, making it a more valuable resource for identifying potential security threats.&#x20;
+
+认证日志存储在 `/var/log/auth.log` 文件中。值得注意的是，尽管 `/var/log/syslog` 也包含着类似的登录信息，但是 `/var/log/auth.log` 文件主要集中于用户的身份认证尝试。所以对于发现潜在的安全威胁来说，auth.log 是一个更加有价值的资源。
+
+Therefore, it is essential for penetration testers to review the logs stored in the `/var/log/auth.log` file to ensure that the system is secure and has not been compromised.
+
+所以，为了确保系统是安全的，渗透测试者有必要审查一下 `/var/log/auth.log` 文件的内容。
 
 **Auth.log**
 
-```shell-session
+```bash
 Feb 28 2023 18:15:01 sshd[5678]: Accepted publickey for admin from 10.14.15.2 port 43210 ssh2: RSA SHA256:+KjEzN2cVhIW/5uJpVX9n5OB5zVJ92FtCZxVzzcKjw
 Feb 28 2023 18:15:03 sudo:   admin : TTY=pts/1 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/bash
 Feb 28 2023 18:15:05 sudo:   admin : TTY=pts/1 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/apt-get install netcat-traditional
@@ -140,7 +156,25 @@ Feb 28 2023 18:15:21 CRON[2345]: pam_unix(cron:session): session opened for user
 Feb 28 2023 18:15:24 CRON[2345]: pam_unix(cron:session): session closed for user root
 ```
 
-In this example, we can see in the first line that a successful public key has been used for authentication for the user `admin`. Additionally, we can see that this user is in the `sudoers` group because he can execute commands using `sudo`. The kernel message indicates that unexpected traffic was allowed on port 22, which could indicate a potential security breach. After that, we see that a new session was created for user "admin" by `systemd-logind` and that a `cron` session opened and closed for the user `root`.
+In this example, we can see in the first line that a successful public key has been used for authentication for the user `admin`.&#x20;
+
+在该例中，在第一行我们可以看到，用户 `admin` 使用公钥进行了一次成功的身份认证。
+
+Additionally, we can see that this user is in the `sudoers` group because he can execute commands using `sudo`.&#x20;
+
+此外，我们可以发现该用户位于`sudoers` 组，因为他可以使用`sudo` 执行命令。
+
+
+
+The kernel message indicates that unexpected traffic was allowed on port 22, which could indicate a potential security breach.&#x20;
+
+例中的内核信息表明有一个非预期的流量通过了22端口，这表明系统可能存在一个安全漏洞。
+
+After that, we see that a new session was created for user "admin" by `systemd-logind` and that a `cron` session opened and closed for the user `root`.
+
+最后，我们可以看到admin用户通过`systemd-logind` 创建了一个新的会话，然后是`root` 用户打开和关闭了一个`cron` 会话。
+
+***
 
 **Application logs**
 
