@@ -6,69 +6,83 @@ description: https://academy.hackthebox.com/module/18/section/2100
 
 System logs on Linux are a set of files that contain information about the system and the activities taking place on it.&#x20;
 
-These logs are important for monitoring and troubleshooting the system, as they can provide **insights** into system behavior, application activity, and security events.&#x20;
+Linux中的系统日志就是一个文件的集合，这些文件包含了系统以及在系统上发生的各种活动的信息。
 
+These logs are important for monitoring and troubleshooting the system, as they can provide **insights（深入了解）** into system behavior, application activity, and security events.&#x20;
 
+这些日志对于监视以及排查系统是十分重要的！
 
 These system logs can be a valuable source of information for identifying potential security weaknesses and vulnerabilities within a Linux system as well.&#x20;
 
-
+这些系统日志也是有价值的信息源，我们可以利用它们发现系统内潜在的安全弱点及漏洞。
 
 By analyzing the logs on our target systems, we can gain insights into the system's behavior, network activity, and user activity and can use this information to identify any abnormal activity, such as unauthorized logins, attempted attacks, clear text credentials, or unusual file access, which could indicate a potential security breach.
 
+通过分析系统的日志，我们能够深入了解系统的行为、网络活动以及用户活动相关的信息。我们可以利用这些信息来识别异常的活动，比如未授权登录、攻击企图、明文凭据或是不寻常的文件访问等等。这些异常活动暗示着我们的系统可能存在安全漏洞。
+
 We, as penetration testers, can also use system logs to monitor the **effectiveness（有效性）** of our security testing activities.&#x20;
 
-
+作为渗透测试者的我们，也可以利用系统日志监视安全测试活动的有效性。
 
 By reviewing the logs after performing security testing, we can determine if our activities triggered any security events, such as intrusion detection alerts or system warnings.&#x20;
 
-
+在进行安全测试后，通过查看日志，可以确定我们的活动是否引起了安全事件，比如入侵检测警报或系统警告。
 
 This information can help us refine our testing strategies and improve the overall security of the system.
 
+这些信息可以帮助我们改进测试策略并提升系统的安全性。
+
 In order to ensure the security of a Linux system, it is important to configure system logs properly.&#x20;
 
-
+为了确保系统的安全性，我们需要正确地配置系统日志。
 
 This includes setting the appropriate log levels, configuring log rotation to prevent log files from becoming too large, and ensuring that the logs are stored securely and protected from unauthorized access.&#x20;
+
+这包括设置适当的日志等级，配置日志轮替（避免日志文件过大）、确保日志的安全存储以及避免对日志的未授权访问。
 
 
 
 In addition, it is important to regularly review and analyze the logs to identify potential security risks and respond to any security events in a timely manner.&#x20;
 
-
+此外，我们需要定期核查和分析日志，并以此发现潜在的安全风险，同时要及时地对安全事件作出响应。
 
 There are several different types of system logs on Linux, including:
 
-* Kernel Logs
-* System Logs
-* Authentication Logs
-* Application Logs
-* Security Logs
+Linux中有几种不同类型的系统日志，包括：
+
+* Kernel Logs-内核日志
+* System Logs-系统日志
+* Authentication Logs-认证日志
+* Application Logs-应用程序日志
+* Security Logs-安全日志
+
+
 
 **Kernel logs**
 
 These logs contain information about the system's kernel, including hardware drivers, system calls, and kernel events.&#x20;
 
-
+内核日志含有系统内核的信息，包括硬件驱动器、系统调用和内核事件。
 
 They are stored in the `/var/log/kern.log` file.&#x20;
 
-
+内核日志存储在 /var/log/kern.log 文件中。
 
 For example, kernel logs can reveal the presence of vulnerable or outdated drivers that could be targeted by attackers to gain access to the system.&#x20;
 
-
+举个例子，内核日志可以帮助我们发现存在漏洞的或是过时的驱动器，这些驱动器可能会成为攻击者访问系统的目标。
 
 They can also provide insights into **system crashes（系统崩溃）**, resource limitations, and other events that could lead to a denial of service or other security issues.&#x20;
 
-
+内核日志能让我们深入了解如系统崩溃、资源限制或其他能够造成拒绝服务攻击及其他安全问题的事件。
 
 In addition, kernel logs can help us identify **suspicious（可疑的）** system calls or other activities that could indicate the presence of malware or other malicious software on the system.&#x20;
 
-
+此外，内核日志也能够帮助我们发现可疑的系统调用或是其他暗示系统中存在恶意软件的活动。
 
 By monitoring the `/var/log/kern.log` file, we can detect any unusual behavior and take appropriate action to prevent further damage to the system.
+
+通过监视 /var/log/kern.log 文件，我们能够发现异常行为并采取适当的措施阻止其进一步损害系统。
 
 **System logs**
 
