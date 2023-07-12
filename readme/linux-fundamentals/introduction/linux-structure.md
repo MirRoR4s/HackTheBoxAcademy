@@ -12,23 +12,23 @@ Many events led up to creating the first Linux kernel and, ultimately, the Linux
 
 At first, Linux was a personal project started in 1991 by a Finnish student named Linus Torvalds. His goal was to create a new, free operating system kernel. Over the years, the Linux kernel has gone from a small number of files written in C under licensing that prohibited commercial distribution to the latest version with over 23 million source code lines (comments excluded), licensed under the GNU General Public License v2.
 
-起初，Linux 是一个名为 Linux Torvalds 的芬兰学生于 1991 年启动的私人项目。他的目标是创建一个全新的、免费的操作系统内核。起初，Linux 的内核仅由少量遵循禁止商业发行协议的 C 语言文件构成。经过多年的发展，Linux 内核最新版本的源代码在  GPL v2 协议许可下的行数已经超过了 230 万行。
+起初，Linux 是一个名为 Linux Torvalds 的芬兰学生于 1991 年启动的私人项目。他的目标是创建一个全新的、免费的操作系统内核。起初，Linux 的内核仅由少量遵循禁止商业发行协议的 C 语言文件构成。但经过多年的发展，Linux内核最新版本的源代码在GPL v2协议许可下的行数已超过了 230 万行。
 
 Linux is available in over 600 distributions (or an operating system based on the Linux kernel and supporting software and libraries). Some of the most popular and well-known being Ubuntu, Debian, Fedora, OpenSUSE, elementary, Manjaro, Gentoo Linux, RedHat, and Linux Mint.
 
-Linux 有超过 600 个发行版（发行版指的是一个基于 Linux 内核并提供软件和库支持的操作系统）。最受欢迎且最知名的发行版有 Ubuntu、Debian、Fedora、OpenSUSE 等。
+Linux 有超过 600 个发行版（发行版指的是一个基于 Linux 内核并提供软件和库支持的操作系统）。最受欢迎且最知名的发行版有 **Ubuntu**、Debian、Fedora、OpenSUSE 等。
 
 Linux is generally considered more secure than other operating systems, and while it has had many kernel vulnerabilities in the past, it is becoming less and less frequent. It is less susceptible to malware than Windows operating systems and is very frequently updated. Linux is also very stable and generally affords very high performance to the end-user. However, it can be more difficult for beginners and does not have as many hardware drivers as Windows.
 
-通常来说，人们认为 Linux 比其他的操作系统要更加安全。尽管 Linux 在过去有许多的内核漏洞，但是如今已变得越来越少。比起 Windows 操作系统，Linux 更不容易受到恶意软件的影响，同时其更新也非常频繁。此外，Linux 还非常的稳定，而且一般能够为终端用户提供非常高的性能。然而，比起 Windows 操作系统，Linux 对初学者更加的不友好并且没有 Windows 那么多的硬件驱动。
+通常来说，人们认为 Linux 比其他的操作系统更加安全。尽管Linux在过去有许多的内核漏洞，但是如今已变得越来越少。比起 Windows操作系统，Linux更不容易受到恶意软件的影响，同时其更新也非常频繁。此外，Linux还非常的稳定，而且一般能够为终端用户提供非常高的性能。然而，比起Windows操作系统，Linux对初学者更加的不友好并且没有Windows那么多的硬件驱动。
 
 Since Linux is free and open-source, the source code can be modified and distributed commercially or non-commercially by anyone. Linux-based operating systems run on servers, mainframes, desktops, embedded systems such as routers, televisions, video game consoles, and more. The overall Android operating system that runs on smartphones and tablets is based on the Linux kernel, and because of this, Linux is the most widely installed operating system.
 
-因为 Linux 是免费且开源的，所以任何人都可以修改商业的或非商业的发行版的源代码。基于 Linux 的操作系统可以运行在服务器上、大型主机上、桌面上以及嵌入式系统上，比如路由器、电视机、游戏主机等。运行在智能手机和平板电脑上的所有安卓操作系统都是基于 Linux 内核的，所以 Linux 是世界上使用最广泛的操作系统。
+因为Linux是免费且开源的，所以任何人都可以修改商业或非商业发行版的源代码。基于Linux的操作系统可以运行在服务器上、大型主机上、桌面上以及嵌入式系统上，比如路由器、电视机、游戏主机等。运行在智能手机和平板电脑上的所有安卓系统都是基于Linux内核的，所以Linux是世界上使用最广泛的操作系统。
 
 Linux is an operating system like Windows, iOS, Android, or macOS. An OS is software that manages all of the hardware resources associated with our computer. That means that an OS manages the whole communication between software and hardware. Also, there exist many different distributions (distro). It is like a version of Windows operating systems.
 
-Linux 是一个类似于 Windows、iOS、安卓或 macOS 的操作系统。操作系统是一个软件，其管理着与计算机相关的所有硬件资源，这意味着 OS 管理着软件和硬件之间的所有通信。此外，就像 Windows 操作系统有很多版本一样，Linux 也存在许多不同的发行版（distro）。
+Linux是一个类似于 Windows、iOS、安卓或macOS的操作系统。操作系统是一个软件，其管理着与计算机相关的所有硬件资源，这意味着 OS管理着软件和硬件之间的所有通信。此外，就像Windows操作系统有很多版本一样，Linux系统也存在许多不同的发行版（distro）。
 
 With the interactive instances, we get access to the Pwnbox, a customized version of Parrot OS. This will be the primary OS we will work with through the modules. Parrot OS is a Debian-based Linux distribution that focuses on security, privacy, and development.
 
