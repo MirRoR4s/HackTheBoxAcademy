@@ -6,11 +6,11 @@ description: https://academy.hackthebox.com/module/18/section/2100
 
 System logs on Linux are a set of files that contain information about the system and the activities taking place on it.&#x20;
 
-Linux系统日志是一个文件的集合，这些文件包含了系统和在系统上发生的各种活动的信息。
+Linux上的系统日志是一个文件集，包含了系统及系统上所发生的各种活动的信息。
 
 These logs are important for monitoring and troubleshooting the system, as they can provide **insights（深入了解）** into system behavior, application activity, and security events.&#x20;
 
-系统日志对于系统监视和系统排错十分重要，因为它能帮助我们深入了解如系统行为、程序行为和安全事件等信息。
+系统日志对于系统监视和排错来说十分重要，因为它能帮助我们深入了解如系统行为、程序行为和安全事件等信息。
 
 These system logs can be a valuable source of information for identifying potential security weaknesses and vulnerabilities within a Linux system as well.&#x20;
 
@@ -18,7 +18,7 @@ These system logs can be a valuable source of information for identifying potent
 
 By analyzing the logs on our target systems, we can gain insights into the system's behavior, network activity, and user activity and can use this information to identify any abnormal activity, such as unauthorized logins, attempted attacks, clear text credentials, or unusual file access, which could indicate a potential security breach.
 
-通过分析系统日志，我们能够深入了解系统行为、网络活动和用户活动等相关的信息。利用这些信息，我们可以识别异常的活动，比如未授权登录、攻击企图、明文凭据或是异常的文件访问等等，这些异常活动暗示着我们的系统可能存在安全漏洞。
+通过分析系统日志，我们能够深入地了解系统的行为、网络活动和用户活动等相关的信息。利用这些信息，我们可以识别异常的活动，比如未授权登录、攻击企图、明文凭据或是异常的文件访问等等，这些异常活动暗示着我们的系统可能存在安全漏洞。
 
 ***
 
@@ -88,7 +88,7 @@ In addition, kernel logs can help us identify **suspicious（可疑的）** syst
 
 By monitoring the `/var/log/kern.log` file, we can detect any unusual behavior and take appropriate action to prevent further damage to the system.
 
-通过监视 /var/log/kern.log 文件，我们能够发现异常行为并采取适当的措施阻止其进一步损害系统。
+通过监视 /`var/log/kern.log` 文件，我们能够发现异常行为并采取适当的措施阻止其进一步损害系统。
 
 ***
 
@@ -104,7 +104,7 @@ They are stored in the `/var/log/syslog` file.&#x20;
 
 By analyzing login attempts, service starts and stops, and other system-level events, we can detect any possible access or activities on the system.&#x20;
 
-通过分析登录尝试、服务启停和其他系统级事件，我们能够探查到任何可能的系统活动或是对系统的访问。
+通过分析登录尝试、服务启停和其他系统级事件，我们可以识别任意可能的系统活动或系统访问。
 
 This can help us identify any vulnerabilities that could be exploited and help us recommend security measures to mitigate these risks.&#x20;
 
@@ -112,7 +112,7 @@ This can help us identify any vulnerabilities that could be exploited and help u
 
 In addition, we can use the `syslog` to identify potential issues that could impact the availability or performance of the system, such as failed service starts or system reboots. Here is an example of how such `syslog` file could look like:
 
-此外，我们可以使用 `syslog` 来发现潜在的问题，这些问题也许会影响到系统的可用性或是性能，比如导致服务启动失败或是系统重启。以下是 `syslog` 文件的一个示例：
+此外，我们可以使用 `syslog` 来发现潜在的问题，这些问题可能会影响到系统的性能或可用性，比如导致服务启动失败或是系统重启。以下是 `syslog` 文件的一个示例：
 
 **Syslog**
 
@@ -192,18 +192,19 @@ For example, `access logs` keep a record of user and process activity on the sys
 
 In this log entry, we can see that the user `htb-student` used the `privileged.sh` script to access the `api-keys.txt` file in the `/root/hidden/` directory. On Linux systems, most common services have default locations for access logs:
 
-| **Service**  | **Description**                                                                                             |
-| ------------ | ----------------------------------------------------------------------------------------------------------- |
-| `Apache`     | Access logs are stored in the /var/log/apache2/access.log file (or similar, depending on the distribution). |
-| `Nginx`      | Access logs are stored in the /var/log/nginx/access.log file (or similar).                                  |
-| `OpenSSH`    | Access logs are stored in the /var/log/auth.log file on Ubuntu and in /var/log/secure on CentOS/RHEL.       |
-| `MySQL`      | Access logs are stored in the /var/log/mysql/mysql.log file.                                                |
-| `PostgreSQL` | Access logs are stored in the /var/log/postgresql/postgresql-version-main.log file.                         |
-| `Systemd`    | Access logs are stored in the /var/log/journal/ directory.                                                  |
+<table data-header-hidden><thead><tr><th width="209"></th><th></th></tr></thead><tbody><tr><td><strong>Service</strong></td><td><strong>Description</strong></td></tr><tr><td><code>Apache</code></td><td>Access logs are stored in the /var/log/apache2/access.log file (or similar, depending on the distribution).</td></tr><tr><td><code>Nginx</code></td><td>Access logs are stored in the /var/log/nginx/access.log file (or similar).</td></tr><tr><td><code>OpenSSH</code></td><td>Access logs are stored in the /var/log/auth.log file on Ubuntu and in /var/log/secure on CentOS/RHEL.</td></tr><tr><td><code>MySQL</code></td><td>Access logs are stored in the /var/log/mysql/mysql.log file.</td></tr><tr><td><code>PostgreSQL</code></td><td>Access logs are stored in the /var/log/postgresql/postgresql-version-main.log file.</td></tr><tr><td><code>Systemd</code></td><td>Access logs are stored in the /var/log/journal/ directory.</td></tr></tbody></table>
 
 **Security logs**
 
-These security logs and their events are often recorded in a variety of log files, depending on the specific security application or tool in use. For example, the Fail2ban application records failed login attempts in the `/var/log/fail2ban.log` file, while the UFW firewall records activity in the `/var/log/ufw.log` file. Other security-related events, such as changes to system files or settings, may be recorded in more general system logs such as `/var/log/syslog` or `/var/log/auth.log`. As penetration testers, we can use log analysis tools and techniques to search for specific events or patterns of activity that may indicate a security issue and use that information to further test the system for vulnerabilities or potential attack vectors.
+These security logs and their events are often recorded in a variety of log files, depending on the specific security application or tool in use.&#x20;
+
+
+
+For example, the Fail2ban application records failed login attempts in the `/var/log/fail2ban.log` file, while the UFW firewall records activity in the `/var/log/ufw.log` file. Other security-related events, such as changes to system files or settings, may be recorded in more general system logs such as `/var/log/syslog` or `/var/log/auth.log`.&#x20;
+
+
+
+As penetration testers, we can use log analysis tools and techniques to search for specific events or patterns of activity that may indicate a security issue and use that information to further test the system for vulnerabilities or potential attack vectors.
 
 It is important to be familiar with the default locations for access logs and other log files on Linux systems, as this information can be useful when performing a security assessment or penetration test. By understanding how security-related events are recorded and stored, we can more effectively analyze log data and identify potential security issues.
 

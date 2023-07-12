@@ -8,7 +8,7 @@ description: https://academy.hackthebox.com/module/49/section/457
 
 Services are a major component of the Windows operating system.&#x20;
 
-
+Windows服务是Windows系统的主要组件之一。
 
 They **allow for** the creation and management of long-running processes.&#x20;
 
@@ -16,7 +16,7 @@ They **allow for** the creation and management of long-running processes.&#x20;
 
 Windows services can be started automatically at system boot without user intervention.&#x20;
 
-
+在无需用户干预的情况下，操作系统会将系统引导时自动启动Windows服务。
 
 These services can continue to run in the background even after the user logs out of their account on the system.
 
