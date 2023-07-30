@@ -74,6 +74,7 @@
       * [HyperText Transfer Protocol (HTTP)](readme/web-requests/http-fundamentals/hypertext-transfer-protocol-http.md)
       * [Hypertext Transfer Protocol Secure (HTTPS)](readme/web-requests/http-fundamentals/hypertext-transfer-protocol-secure-https.md)
       * [HTTP Requests and Responses](readme/web-requests/http-fundamentals/http-requests-and-responses.md)
+      * [HTTP Headers](readme/web-requests/http-fundamentals/http-headers.md)
     * [Page 1](readme/web-requests/page-1.md)
   * [Windows Fundamental](readme/windows-fundamental/README.md)
     * [前言](readme/windows-fundamental/qian-yan.md)
