@@ -10,9 +10,9 @@ Today, the majority of the applications we use constantly interact with the inte
 
 HTTP communication consists of a client and a server, where the client requests the server for a resource. The server processes the requests and returns the requested resource. The default port for HTTP communication is port `80`, though this can be changed to any other port, depending on the web server configuration. The same requests are utilized when we use the internet to visit different websites. We enter a `Fully Qualified Domain Name` (`FQDN`) as a `Uniform Resource Locator` (`URL`) to reach the desired website, like [www.hackthebox.com](http://www.hackthebox.com/).
 
-HTTP通信由客户端和服务器端组成，客户端会请求服务器端上的资源。服务器端会处理请求并返回所请求的资源。HTTP默认的通信端口是80端口，但可基于web服务器的配置将通信端口改为其他的端口。当我们使用互联网访问不同的网站时，会使用到相同的请求。我们输入一个全限定域名（FQDN）作为统一资源定位符以到达期望的网站，比如www.hackthebox.com。
+HTTP通信由客户端和服务器端组成，客户端会请求服务器端上的资源。服务器端会处理客户端的请求并返回所请求的资源。HTTP默认的通信端口是80端口，但可基于web服务器的配置将通信端口改为其他的端口。当我们使用互联网访问不同的网站时，会使用到相同的请求。我们输入一个全限定域名（FQDN）作为统一资源定位符以到达期望的网站，比如 www.hackthebox.com。
 
-
+***
 
 ### URL
 
