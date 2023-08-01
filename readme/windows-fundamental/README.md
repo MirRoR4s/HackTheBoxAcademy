@@ -4,7 +4,7 @@ description: https://academy.hackthebox.com/module/49/section/454
 
 # Windows Fundamental
 
-各大企业环境中都大量使用了Windows操作系统，所以我们经常会在渗透过程中获得 Windows 机器的访问权限，为了进行有效的信息手机、提权、横向移动和后渗透，有必要了解如何浏览文件系统和命令行。在渗透过程中，也可用 Windows 作为我们的攻击机。
+各企业环境中都大量使用了Windows操作系统，所以我们经常会在渗透过程中获得 Windows 机器的访问权限，为了进行有效的信息收集、提权、横向移动和后渗透，有必要了解如何浏览Windows文件系统和命令行。在渗透过程中，也可用 Windows 作为我们的攻击机。
 
 许多服务器运行在 Windows 操作系统上，并且大多数公司为其员工部署了 Windows 工作站。这是因为 Windows 工作站易于个人使用，并且可以利用活动目录进行集中管理。本模块涵盖了 Windows 操作系统和命令行的基本内容。
 
